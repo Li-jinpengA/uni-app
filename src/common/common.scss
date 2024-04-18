@@ -1,0 +1,85 @@
+/* 公共样式 */
+
+
+uni-page-body,
+page {
+    height: 100%;
+}
+
+// 字体
+@font-face {
+    font-family: 'PingFang SC-Regular';
+    src: url('https://zt.domidodo.com.cn/fonts/pingfangsc/pingfangsc-regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PingFang SC-Medium';
+    src: url('https://zt.domidodo.com.cn/fonts/pingfangsc/pingfangsc-medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'PingFang SC-Semibold';
+    src: url('https://zt.domidodo.com.cn/fonts/pingfangsc/pingfangsc-semibold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'D-DIN-DIN-Bold';
+    src: url('https://zt.domidodo.com.cn/fonts/DINPro-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Alimama ShuHeiTi-Bold';
+    src: url('https://zt.domidodo.com.cn/fonts/ALIMAMA_SHUHEITI_BOLD.TTF') format('truetype');
+}
+
+/* 顶部topbar */
+.u-navbar__content__title {
+    font-family: $pss;
+    font-weight: 600;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+/* 底部tabbar */
+.uni-app--showtabbar uni-page-wrapper::after,
+.uni-tabbar-bottom {
+    display: none;
+}
+
+.uni-app--showtabbar uni-page-wrapper {
+    height: 100%;
+}
+
+.u-tabbar {
+    height: 100%;
+
+    ::v-deep .u-tabbar__content {
+        height: 100%;
+        border: 0;
+
+        .u-tabbar__content__item-wrapper {
+            height: 100%;
+
+            .u-tabbar-item {
+                justify-content: normal;
+                padding-top: 16px;
+                box-sizing: border-box;
+
+                .u-page__item__slot-icon {
+                    width: 24px;
+                    height: 24px;
+                }
+
+                .u-tabbar-item__text {
+                    margin-top: 3px !important;
+                    font-size: 12px !important;
+                }
+            }
+        }
+    }
+}
+
+/* 解决底部样式闪耀 */
+.tabbar .cursor-pointer {
+    cursor: auto;
+}

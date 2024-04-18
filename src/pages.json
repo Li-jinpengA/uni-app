@@ -1,0 +1,73 @@
+{
+	"easycom": {
+		// 注意一定要放在custom里，否则无效，https://ask.dcloud.net.cn/question/131175
+		"custom": {
+			"^u--(.*)": "uview-plus/components/u-$1/u-$1.vue",
+			"^up-(.*)": "uview-plus/components/u-$1/u-$1.vue",
+			"^u-([^-].*)": "uview-plus/components/u-$1/u-$1.vue"
+		}
+	},
+	"lazyCodeLoading": "requiredComponents",
+	// 页面路由配置
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/home",
+			"style": {
+				"navigationBarTitleText": "uni-app"
+			}
+		}
+	],
+	// 分包配置
+	"subPackages": [
+		{
+			"root": "pages-a", // 分包根目录
+			"pages": [ // 分包页面配置
+				{
+					"path": "page-a", // 页面路径
+					"style": {
+						"navigationBarTitleText": "页面一" // 页面标题
+					}
+				}
+			]
+		},
+		{
+			"root": "pages-b", // 分包根目录
+			"pages": [ // 分包页面配置
+				{
+					"path": "page-b",
+					"style": {
+						"navigationBarTitleText": "页面二"
+					}
+				}
+			]
+		},
+		{
+			"root": "pages-c", // 分包根目录
+			"pages": [ // 分包页面配置
+				{
+					"path": "page-c",
+					"style": {
+						"navigationBarTitleText": "页面三"
+					}
+				}
+			]
+		}
+	],
+	// 分包预下载
+	"preloadRule": {
+		"pages/home": { // 访问 pages/home 时，预下载分包 pages-a
+			"network": "all",
+			"packages": [
+				"__APP__",
+				"pages-a"
+			]
+		}
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black", // 导航栏背景颜色
+		"navigationBarTitleText": "uni-app", // 导航栏标题的文本内容
+		"navigationBarBackgroundColor": "#F8F8F8", // 导航栏的背景颜色
+		"backgroundColor": "#F8F8F8", //页面的背景颜色
+		"navigationStyle": "custom", // 导航栏样式,custom取消导航栏
+	}
+}
